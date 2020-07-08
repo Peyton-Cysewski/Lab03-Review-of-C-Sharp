@@ -6,7 +6,11 @@ namespace Lab03_Review_of_C_Sharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Challenge 1
+            Console.WriteLine("Challenge 1:\nEnter three numbers on the same line separated by spaces:");
+            string input = Console.ReadLine();
+            int output = SplitThenMultiplyArray(input);
+            Console.WriteLine($"Challenge 1 produced this output: {output}");
         }
 
         /// <summary>

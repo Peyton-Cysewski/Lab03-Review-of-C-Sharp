@@ -100,4 +100,13 @@ namespace Lab03_Tests
             Assert.Equal(expected, actual);
         }
     }
+
+    public class UnitTestChallenge2
+    {
+        [Fact]
+        public void test1()
+        {
+
+        }
+    }
 }

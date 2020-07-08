@@ -14,7 +14,14 @@ namespace Lab03_Review_of_C_Sharp
             //Console.WriteLine($"Challenge 1 produced this output: {output}");
 
             // Challenge 2
-            Challenge2Container();
+            //Challenge2Container();
+
+            // Challenge 3
+            //Console.WriteLine("Challenge 3:");
+            //StarPattern();
+
+            // Challenge 4
+
         }
 
         /// <summary>
@@ -85,6 +92,35 @@ namespace Lab03_Review_of_C_Sharp
 
             double average = GetAverage(sum, divisor);
             Console.WriteLine($"Challenge 2 Produced this output: {average}");
+        }
+
+        /// <summary>
+        /// Makes a cool star pattern
+        /// </summary>
+        public static void StarPattern()
+        {
+            char star = '*';
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (i < 5)
+                    {
+                        if (j < 4 - i || j > 4 + i)
+                            Console.Write(' ');
+                        else
+                            Console.Write(star);
+                    }
+                    else
+                    {
+                        if (j < i - 4 || j > 12 - i)
+                            Console.Write(' ');
+                        else
+                            Console.Write(star);
+                    }
+                }
+                Console.Write("\n");
+            }
         }
     }
 }

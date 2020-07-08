@@ -104,9 +104,32 @@ namespace Lab03_Tests
     public class UnitTestChallenge2
     {
         [Fact]
-        public void test1()
+        public void GetsCorrectAverage()
         {
+            // Assign
+            int inputDivisor = 4;
+            int inputDividend = 10;
+            double expected = 2.5;
+            // Act
+            double actual = GetAverage(inputDividend, inputDivisor);
 
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(1000, 5, 200f)]
+        [InlineData(1010, 8, 126.25f)]
+        [InlineData(7, 2, 3.5f)]
+        [InlineData(96, 5, 19.2f)]
+        [InlineData(0, 7, 0f)]
+        [InlineData(107, 4, 26.75f)]
+        public void Challenge2Works(int dividend, int divisor, double outcome)
+        {
+            double expected = outcome;
+            double actual = GetAverage(dividend, divisor);
+
+            Assert.Equal(expected, actual);
         }
     }
 }

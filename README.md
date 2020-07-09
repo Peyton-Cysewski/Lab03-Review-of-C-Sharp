@@ -13,15 +13,17 @@ Each of the methods in this application have a specific function that is describ
 
 3. Challenge: Create a method that will output to the console the following design. Pay attention to spacing.
 ```
-    * 
-   *** 
+    *
+   ***
   *****
  *******
 *********
  *******
   *****
    ***
-    * ```
+    *
+    
+```
 
 4. Challenge: Write a method that brings in an integer array and returns the number that appears the most times. If there are no duplicates, return the first number in the array. If more than one number show up the same amount of time, return the first found.
 
@@ -45,6 +47,7 @@ Clone this repository to your local machine.
 
 ```
 $ git clone [repo clone url here]
+
 ```
 
 ### To run the program from Visual Studio:
@@ -52,14 +55,16 @@ Select ```File``` -> ```Open``` -> ```Project/Solution```
 
 Next navigate to the location you cloned the Repository.
 
-Double click on the ```Lab01-About-Me``` directory.
+Double click on the ```Lab03-Review-of-C-Sharp``` directory.
 
-Then select and open ```AboutMe.sln```
+Then select and open ```Lab03-Review-of-C-Sharp.sln```
 
 ---
 
 ### Visuals
-***[Add screenshots of your application in action]***
+
+#### WhiteBoard for Challenge 4
+![Whiteboard](./assets/whiteboard.jpg)
 
 #### Application Start
 ![Image 1](https://via.placeholder.com/750x500)

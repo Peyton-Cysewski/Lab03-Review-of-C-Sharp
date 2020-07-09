@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 
 namespace Lab03_Review_of_C_Sharp
 {
@@ -31,6 +32,20 @@ namespace Lab03_Review_of_C_Sharp
             //int[] array5 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             //int num5 = LargestNumber(array5);
             //Console.WriteLine($"Challenge 5 produced this output: {num5}");
+
+            // Challenge 6
+            //Console.WriteLine("Challenge 6:\nWrite a word that will be entered to a test.txt file:");
+            //string word = Console.ReadLine();
+            //UpdateAFile(word);
+
+            // Challenge 7
+            //Console.WriteLine("Challenge 7:\nThe contents of the file you just added to are below:");
+            //ReadAFile();
+
+            // Challenge 8
+            //Console.WriteLine("Challenge 8:\nThis will remove a random word from the same test file.");
+            //RemoveAWord();
+
 
         }
 
@@ -188,6 +203,52 @@ namespace Lab03_Review_of_C_Sharp
                     num = array[i];
             }
             return num;
+        }
+
+        /// <summary>
+        /// Takes a string and appends it to the end of a file.
+        /// </summary>
+        /// <param name="word">appended to the file</param>
+        public static void UpdateAFile(string word)
+        {
+            string path = "../../../words.txt";
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(word);
+            }
+        }
+
+        /// <summary>
+        /// Reads the contents of the test file and displays them in the console.
+        /// </summary>
+        public static void ReadAFile()
+        {
+            string path = "../../../words.txt";
+            string[] contents = File.ReadAllLines(path);
+            for (int i = 0; i < contents.Length; i++)
+            {
+                Console.WriteLine(contents[i]);
+            }
+        }
+
+        /// <summary>
+        /// Randomly removes a word from the test file.
+        /// </summary>
+        public static void RemoveAWord()
+        {
+            System.Random Random = new System.Random();
+            string path = "../../../words.txt";
+            string[] contents = File.ReadAllLines(path);
+            string[] newContents = new string[contents.Length - 1];
+            int random = Random.Next(0, contents.Length);
+            for (int i = 0; i < contents.Length; i++)
+            {
+                if (i > random)
+                    newContents[i - 1] = contents[i];
+                else
+                    newContents[i] = contents[i];
+            }
+            File.WriteAllLines(path, newContents);
         }
     }
 }

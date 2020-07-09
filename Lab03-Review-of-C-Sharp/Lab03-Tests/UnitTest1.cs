@@ -201,15 +201,73 @@ namespace Lab03_Tests
         }
 
         [Theory]
-        [InlineData(new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23}, 2)]
+        [InlineData(new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23 }, 2)]
         [InlineData(new int[] { 6, 6, 6, 6, 6 }, 6)]
-        [InlineData(new int[] { 12, 12, 13, 13, 13, 13, 5, 54, 17}, 13)]
-        [InlineData(new int[] { 8, 8, 8, 8, 8, 8, 8, 8}, 8)]
+        [InlineData(new int[] { 12, 12, 13, 13, 13, 13, 5, 54, 17 }, 13)]
+        [InlineData(new int[] { 8, 8, 8, 8, 8, 8, 8, 8 }, 8)]
         [InlineData(new int[] { 42, 42, 42, 65, 65, 65, 99, 99, 99 }, 42)]
         public void Challenge4Works(int[] array, int output)
         {
             int expected = output;
             int actual = MostCommonNumber(array);
+
+            Assert.Equal(expected, actual);
+        }
+    }
+
+    public class UnitTestChallenge5
+    {
+        [Fact]
+        public void FindsHighestNumber()
+        {
+            // Assign
+            int expected = 10;
+            int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            // Act
+            int actual = LargestNumber(array);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void WorksWithNegativeNumbers()
+        {
+            // Assign
+            int expected = -1;
+            int[] array = new int[] { -1, -2, -3, -4, -5, -6, -7, -8, -9, -10 };
+
+            // Act
+            int actual = LargestNumber(array);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void AllNumbersAreTheSame()
+        {
+            // Assign
+            int expected = 15;
+            int[] array = new int[] { 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 };
+
+            // Act
+            int actual = LargestNumber(array);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(new int[] { 13, 15, 45, 13 }, 45)]
+        [InlineData(new int[] { -3, 78, -45, 1 }, 78)]
+        [InlineData(new int[] { -100, -12, -56, -13 }, -12)]
+        [InlineData(new int[] { -3, -3, -3, -3 }, -3)]
+        public void Challenge5Works(int[] array, int output)
+        {
+            int expected = output;
+            int actual = LargestNumber(array);
 
             Assert.Equal(expected, actual);
         }

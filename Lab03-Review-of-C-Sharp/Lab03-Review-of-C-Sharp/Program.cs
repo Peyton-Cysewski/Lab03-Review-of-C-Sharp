@@ -21,8 +21,17 @@ namespace Lab03_Review_of_C_Sharp
             //StarPattern();
 
             // Challenge 4
-            int[] array = new int[] { 3, 4, 2, 6, 1, 9, 7, 8, 5 };
-            int num = MostCommonNumber(array);
+            //Console.WriteLine("Challenge 4:\nExample Input: [3, 4, 2, 6, 4, 9, 7, 8, 5]");
+            //int[] array4 = new int[] { 3, 4, 2, 6, 4, 9, 7, 8, 5 };
+            //int num4 = MostCommonNumber(array4);
+            //Console.WriteLine($"Challenge 4 produced this output: {num4}");
+
+            // Challenge 5
+            //Console.WriteLine("Challenge 5:\nExample Input: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]");
+            //int[] array5 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //int num5 = LargestNumber(array5);
+            //Console.WriteLine($"Challenge 5 produced this output: {num5}");
+
         }
 
         /// <summary>
@@ -124,6 +133,11 @@ namespace Lab03_Review_of_C_Sharp
             }
         }
 
+        /// <summary>
+        /// Finds the most common occurance of a number, if there are multiple numbers of equal occurance, the first one is returned.
+        /// </summary>
+        /// <param name="array">array of numbers</param>
+        /// <returns>most common number</returns>
         public static int MostCommonNumber(int[] array)
         {
             int[] results = new int[array.Length];
@@ -158,6 +172,22 @@ namespace Lab03_Review_of_C_Sharp
                 }
             }
             return array[index];
+        }
+
+        /// <summary>
+        /// Takes in an array of integers and returns the largest number.
+        /// </summary>
+        /// <param name="array">array of numbers</param>
+        /// <returns>largest number</returns>
+        public static int LargestNumber(int[] array)
+        {
+            int num = array[0];
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] > num)
+                    num = array[i];
+            }
+            return num;
         }
     }
 }

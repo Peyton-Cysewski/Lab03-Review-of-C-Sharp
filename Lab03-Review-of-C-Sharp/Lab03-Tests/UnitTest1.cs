@@ -272,5 +272,34 @@ namespace Lab03_Tests
             Assert.Equal(expected, actual);
         }
     }
+
+    public class UnitTestChallenge9
+    {
+        [Fact]
+        public void ReturnsCorrectArray()
+        {
+            // Assign
+            string sentence = "This is a test sentence.";
+            string[] expected = { "This: 4", "is: 2", "a: 1", "test: 4", "sentence: 8" };
+            //Act
+            string[] actual = SentenceData(sentence);
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void WorksWithMoreSybmols()
+        {
+            // Assign
+            string sentence = "This is a test sentence, but there's commas, semi-colons; and hyphens!";
+            string[] expected = { "This: 4", "is: 2", "a: 1", "test: 4", "sentence: 8", "but: 3", "there's: 7", "commas: 6", "semi-colons: 11", "and: 3", "hyphens: 7" };
+            //Act
+            string[] actual = SentenceData(sentence);
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+    }
 }
 

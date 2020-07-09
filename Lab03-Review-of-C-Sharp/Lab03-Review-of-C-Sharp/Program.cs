@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 
 namespace Lab03_Review_of_C_Sharp
 {
@@ -11,8 +12,8 @@ namespace Lab03_Review_of_C_Sharp
             // Challenge 1
             //Console.WriteLine("Challenge 1:\nEnter three numbers on the same line separated by spaces:");
             //string input1 = Console.ReadLine();
-            //int output = SplitThenMultiplyArray(input1);
-            //Console.WriteLine($"Challenge 1 produced this output: {output}");
+            //int output1 = SplitThenMultiplyArray(input1);
+            //Console.WriteLine($"Challenge 1 produced this output: {output1}");
 
             // Challenge 2
             //Challenge2Container();
@@ -46,7 +47,12 @@ namespace Lab03_Review_of_C_Sharp
             //Console.WriteLine("Challenge 8:\nThis will remove a random word from the same test file.");
             //RemoveAWord();
 
-
+            // Challenge 9
+            Console.WriteLine("Challenge 9:\nEnter a sentence to be analyzed:");
+            string sentence = Console.ReadLine();
+            string[] output9 = SentenceData(sentence);
+            string result9 = String.Join(", ", output9);
+            Console.WriteLine($"Challenge 9 produced the output:\n{result9}");
         }
 
         /// <summary>
@@ -249,6 +255,22 @@ namespace Lab03_Review_of_C_Sharp
                     newContents[i] = contents[i];
             }
             File.WriteAllLines(path, newContents);
+        }
+
+        /// <summary>
+        /// Takes a sentece, splits it into words, and returns a string array that has each word paired with its length of characters.
+        /// </summary>
+        /// <param name="sentence">the sentence to be analyzed</param>
+        /// <returns>analyzed sentence data</returns>
+        public static string[] SentenceData(string sentence)
+        {
+            char[] delimiters = new char[] { ' ', ',', '.', ':', '\t', '!', ';' };
+            string[] data = sentence.Split(delimiters, System.StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < data.Length; i++)
+            {
+                data[i] += $": {data[i].Length}";
+            }
+            return data;
         }
     }
 }

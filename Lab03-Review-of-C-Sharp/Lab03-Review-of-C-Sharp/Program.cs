@@ -21,7 +21,8 @@ namespace Lab03_Review_of_C_Sharp
             //StarPattern();
 
             // Challenge 4
-
+            int[] array = new int[] { 3, 4, 2, 6, 1, 9, 7, 8, 5 };
+            int num = MostCommonNumber(array);
         }
 
         /// <summary>
@@ -121,6 +122,42 @@ namespace Lab03_Review_of_C_Sharp
                 }
                 Console.Write("\n");
             }
+        }
+
+        public static int MostCommonNumber(int[] array)
+        {
+            int[] results = new int[array.Length];
+            results[0] = 1;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (i > 0)
+                {
+                    for (int a = 0; a < i; a++)
+                    {
+                        if (array[i] == array[a])
+                        {
+                            results[a] += 1;
+                            results[i] = 0;
+                            break;
+                        }
+                        else if (a == i - 1)
+                        {
+                            results[i] = 1;
+                        }
+                    }
+                }
+            }
+            int index = 0;
+            int num = 1;
+            for (int i = results.Length - 1; i >= 0; i--)
+            {
+                if (results[i] >= num)
+                {
+                    num = results[i];
+                    index = i;
+                }
+            }
+            return array[index];
         }
     }
 }

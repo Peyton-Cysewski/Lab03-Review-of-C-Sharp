@@ -121,7 +121,7 @@ namespace Lab03_Tests
         [InlineData(1000, 5, 200f)]
         [InlineData(1010, 8, 126.25f)]
         [InlineData(7, 2, 3.5f)]
-        [InlineData(96, 5, 19.2f)]
+        [InlineData(95, 5, 19f)]
         [InlineData(0, 7, 0f)]
         [InlineData(107, 4, 26.75f)]
         public void Challenge2Works(int dividend, int divisor, double outcome)
@@ -132,4 +132,87 @@ namespace Lab03_Tests
             Assert.Equal(expected, actual);
         }
     }
+
+    public class UnitTestChallenge4
+    {
+        [Fact]
+        public void ReturnsTheMostCommonNumber()
+        {
+            // Assign
+            int[] array = new int[] { 1, 2, 2, 3, 3, 3 };
+            int expected = 3;
+            // Act
+            int actual = MostCommonNumber(array);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ReturnsTheMostCommonNumberLongArray()
+        {
+            // Assign
+            int[] array = new int[] { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5 };
+            int expected = 5;
+            // Act
+            int actual = MostCommonNumber(array);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void AllNumbersAreTheSame()
+        {
+            // Assign
+            int[] array = new int[] { 2, 2, 2, 2, 2, 2, 2 };
+            int expected = 2;
+            // Act
+            int actual = MostCommonNumber(array);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void NoDuplicatesAreInTheArray()
+        {
+            // Assign
+            int[] array = new int[] { 3, 4, 2, 6, 1, 9, 7, 8, 5 };
+            int expected = 3;
+            // Act
+            int actual = MostCommonNumber(array);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void SameAmountOfDuplicates()
+        {
+            // Assign
+            int[] array = new int[] { 7, 7, 6, 6, 5, 5, 4, 4, 3, 2, 1 };
+            int expected = 7;
+            // Act
+            int actual = MostCommonNumber(array);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23}, 2)]
+        [InlineData(new int[] { 6, 6, 6, 6, 6 }, 6)]
+        [InlineData(new int[] { 12, 12, 13, 13, 13, 13, 5, 54, 17}, 13)]
+        [InlineData(new int[] { 8, 8, 8, 8, 8, 8, 8, 8}, 8)]
+        [InlineData(new int[] { 42, 42, 42, 65, 65, 65, 99, 99, 99 }, 42)]
+        public void Challenge4Works(int[] array, int output)
+        {
+            int expected = output;
+            int actual = MostCommonNumber(array);
+
+            Assert.Equal(expected, actual);
+        }
+    }
 }
+

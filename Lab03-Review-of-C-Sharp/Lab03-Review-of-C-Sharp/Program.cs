@@ -10,42 +10,42 @@ namespace Lab03_Review_of_C_Sharp
         static void Main(string[] args)
         {
             // Challenge 1
-            //Console.WriteLine("Challenge 1:\nEnter three numbers on the same line separated by spaces:");
-            //string input1 = Console.ReadLine();
-            //int output1 = SplitThenMultiplyArray(input1);
-            //Console.WriteLine($"Challenge 1 produced this output: {output1}");
+            Console.WriteLine("Challenge 1:\nEnter three numbers on the same line separated by spaces:");
+            string input1 = Console.ReadLine();
+            int output1 = SplitThenMultiplyArray(input1);
+            Console.WriteLine($"Challenge 1 produced this output: {output1}");
 
             // Challenge 2
-            //Challenge2Container();
+            Challenge2Container();
 
             // Challenge 3
-            //Console.WriteLine("Challenge 3:");
-            //StarPattern();
+            Console.WriteLine("Challenge 3:");
+            StarPattern();
 
             // Challenge 4
-            //Console.WriteLine("Challenge 4:\nExample Input: [3, 4, 2, 6, 4, 9, 7, 8, 5]");
-            //int[] array4 = new int[] { 3, 4, 2, 6, 4, 9, 7, 8, 5 };
-            //int num4 = MostCommonNumber(array4);
-            //Console.WriteLine($"Challenge 4 produced this output: {num4}");
+            Console.WriteLine("Challenge 4:\nExample Input: [3, 4, 2, 6, 4, 9, 7, 8, 5]");
+            int[] array4 = new int[] { 3, 4, 2, 6, 4, 9, 7, 8, 5 };
+            int num4 = MostCommonNumber(array4);
+            Console.WriteLine($"Challenge 4 produced this output: {num4}");
 
             // Challenge 5
-            //Console.WriteLine("Challenge 5:\nExample Input: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]");
-            //int[] array5 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            //int num5 = LargestNumber(array5);
-            //Console.WriteLine($"Challenge 5 produced this output: {num5}");
+            Console.WriteLine("Challenge 5:\nExample Input: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]");
+            int[] array5 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int num5 = LargestNumber(array5);
+            Console.WriteLine($"Challenge 5 produced this output: {num5}");
 
             // Challenge 6
-            //Console.WriteLine("Challenge 6:\nWrite a word that will be entered to a test.txt file:");
-            //string word = Console.ReadLine();
-            //UpdateAFile(word);
+            Console.WriteLine("Challenge 6:\nWrite a word that will be entered to a test.txt file:");
+            string word = Console.ReadLine();
+            UpdateAFile(word);
 
             // Challenge 7
-            //Console.WriteLine("Challenge 7:\nThe contents of the file you just added to are below:");
-            //ReadAFile();
+            Console.WriteLine("Challenge 7:\nThe contents of the file you just added to are below:");
+            ReadAFile();
 
             // Challenge 8
-            //Console.WriteLine("Challenge 8:\nThis will remove a random word from the same test file.");
-            //RemoveAWord();
+            Console.WriteLine("Challenge 8:\nThis will remove a random word from the same test file.");
+            RemoveAWord();
 
             // Challenge 9
             Console.WriteLine("Challenge 9:\nEnter a sentence to be analyzed:");

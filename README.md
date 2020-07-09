@@ -21,8 +21,7 @@ Each of the methods in this application have a specific function that is describ
  *******
   *****
    ***
-    *
-    
+    *  
 ```
 
 4. Challenge: Write a method that brings in an integer array and returns the number that appears the most times. If there are no duplicates, return the first number in the array. If more than one number show up the same amount of time, return the first found.
@@ -67,11 +66,11 @@ Then select and open ```Lab03-Review-of-C-Sharp.sln```
 ![Whiteboard](./assets/whiteboard.jpg)
 
 #### Application Start
-![Image 1](https://via.placeholder.com/750x500)
+![Start](./assets/programstart.png)
 #### Using the Application
-![Image 1](https://via.placeholder.com/750x500)
+![Middle](./assets/programmiddle.png)
 #### Application End
-![Image 1](https://via.placeholder.com/750x500)
+![Emd](./assets/programend.png)
 
 ---
 
